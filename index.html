@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karthikeyan R — Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer portfolio — Java, Spring Boot, React, Next.js, PostgreSQL.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="site-nav">
+    <div class="site-nav-links">
+      <a href="#" data-page="home">Home</a>
+      <a href="#" data-page="about">About</a>
+      <a href="#" data-page="projects">Works</a>
+      <a href="#" data-page="contact">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5" />
+        <path
+          d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HOME PAGE -->
+    <section class="page active" id="home">
+      <div class="hero-inner">
+        <div class="hero-social" aria-label="Social links">
+          <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener" class="social-icon"
+            aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/karthikeyan-ramlingam" target="_blank" rel="noopener" class="social-icon"
+            aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="mailto:karthikeyan.ramlingam@gmail.com" class="social-icon" aria-label="Gmail">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </a>
+          <a href="https://leetcode.com/KarthikeyanRamlingam" target="_blank" rel="noopener" class="social-icon"
+            aria-label="LeetCode">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-photo">
+          <lottie-player src="assets/Hello without Text annimation.json" background="transparent" speed="1"
+            style="width: 160px; height: 160px;" loop autoplay>
+          </lottie-player>
+        </div>
+
+        <h2 class="hero-greeting">Hi ! I'm Karthikeyan</h2>
+
+        <h1 class="hero-headline">
+          Software Developer,Building Ideas Into Digital Experiences.
+        </h1>
+
+        <p class="hero-tagline">
+          Software Developer crafting modern, scalable, and user-focused applications with clean code and creative
+          solutions.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" data-page="contact" class="hero-btn hero-btn-primary">
+            Say Hi!
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="assets/resume.pdf" target="_blank" rel="noopener" class="hero-btn hero-btn-secondary">
+            My resume
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section class="page" id="about">
+      <div class="page-inner about-container">
+        <div class="about-layout">
+          <div class="about-photo">
+            <div class="about-photo-frame">
+              <img src="assets/karthik.png" alt="Karthikeyan R">
+            </div>
+          </div>
+
+          <div class="about-content">
+            <h2 class="about-heading">About me</h2>
+            <p class="about-text">
+              A passionate Software Developer focused on building scalable, user-friendly web applications and exploring
+              AI/ML technologies. Skilled in Java, Spring Boot, React.js, JavaScript, Python, REST APIs, and MySQL, with
+              hands-on experience developing full-stack and AI-powered projects. I enjoy solving problems, learning new
+              technologies, and turning ideas into reliable software solutions.
+              . An avid learner and explorer, I'm always
+              seeking new opportunities to grow.
+            </p>
+
+            <div class="about-cards">
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                  </svg>
+                </div>
+                <h3 class="about-card-title">Education</h3>
+                <p class="about-card-text">B.E in Computer Science</p>
+              </div>
+
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 18L22 12L16 6" />
+                    <path d="M8 6L2 12L8 18" />
+                  </svg>
+                </div>
+                <h3 class="about-card-title">Languages</h3>
+                <p class="about-card-text">Java, Python, JavaScript, SQL, NextJS</p>
+              </div>
+
+              <div class="about-card">
+                <div class="about-card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                </div>
+                <h3 class="about-card-title">Projects</h3>
+                <p class="about-card-text">Built projects on AI-ML and Java</p>
+              </div>
+            </div>
+
+            <div class="about-tools">
+              <h3 class="about-tools-title">Tools I use</h3>
+              <div class="about-tools-grid">
+                <div class="tool-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                    alt="VS Code">
+                </div>
+                <div class="tool-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
+                    alt="Jupyter">
+                </div>
+                <div class="tool-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                </div>
+                <div class="tool-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                    alt="Postman">
+                </div>
+                <div class="tool-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                </div>
+                <div class="tool-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS PAGE -->
+    <section class="page" id="projects">
+      <div class="page-inner">
+        <div class="page-header">
+          <h1 class="page-header-title">Things I've <span class="accent">Built</span></h1>
+          <p class="page-header-sub">A selection of projects across full-stack and AI/ML</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/Gemini_Generated_Image_hjbcbehjbcbehjbc.png" alt="BookIt project thumbnail"
+                loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">BookIt</h3>
+              <p class="project-kicker mono dim">Full-stack appointment booking platform</p>
+              <ul class="project-bullets">
+                <li>A full-stack appointment platform that enables customers to discover services, book appointments,
+                  make payments, and check in via QR codes. Businesses can manage staff, schedules, queues, services,
+                  notifications, and no-shows through a centralized dashboard.</li>
+              </ul>
+              <div class="tag-list" aria-label="Tech stack">
+                <div class="tech-icon-badge" data-tooltip="Next.js">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
+                    class="dark-invert" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="TypeScript">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                    alt="TypeScript" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="Node.js">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"
+                    loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="PostgreSQL">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                    alt="PostgreSQL" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="Stripe">
+                  <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="Twilio">
+                  <img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Twilio" loading="lazy">
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/KarthikeyanRamlingam/BookIt" target="_blank" rel="noopener"
+                  class="proj-btn proj-btn-ghost">Code</a>
+                <a href="https://book-it-kappa-virid.vercel.app" target="_blank" rel="noopener" class="proj-btn proj-btn-solid">Live Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="9" cy="9" r="2" />
+                <path d="m21 15-5-5L5 21" />
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Deepfake Image Detection</h3>
+              <p class="project-kicker mono dim">AI-powered image classification system</p>
+              <ul class="project-bullets">
+                <li>Built a CNN-based classifier combined with FFT frequency analysis to flag manipulated images.</li>
+                <li>Handled preprocessing, training and evaluation, deployed as an interactive Streamlit app.</li>
+              </ul>
+              <div class="tag-list" aria-label="Tech stack">
+                <div class="tech-icon-badge" data-tooltip="Python">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+                    loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="TensorFlow">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                    alt="TensorFlow" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="CNN / PyTorch">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                    alt="CNN / PyTorch" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="FFT / NumPy">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                    alt="FFT / NumPy" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="Streamlit">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
+                    alt="Streamlit" loading="lazy">
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener"
+                  class="proj-btn proj-btn-ghost">Code</a>
+                <a href="#" target="_blank" rel="noopener" class="proj-btn proj-btn-solid">Live Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Full-Stack E-Commerce App</h3>
+              <p class="project-kicker mono dim">Java · Spring Boot · React · MySQL</p>
+              <ul class="project-bullets">
+                <li>Built authentication, product management, cart and checkout with a structured Spring Boot backend.
+                </li>
+                <li>Added an admin dashboard for inventory and order management using Spring Data JPA and REST APIs.
+                </li>
+              </ul>
+              <div class="tag-list" aria-label="Tech stack">
+                <div class="tech-icon-badge" data-tooltip="Java">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                    loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="Spring Boot">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                    alt="Spring Boot" loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="React.js">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js"
+                    loading="lazy">
+                </div>
+                <div class="tech-icon-badge" data-tooltip="MySQL">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"
+                    loading="lazy">
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener"
+                  class="proj-btn proj-btn-ghost">Code</a>
+                <a href="#" target="_blank" rel="noopener" class="proj-btn proj-btn-solid">Live Demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section class="page section-contact" id="contact">
+      <div class="page-inner contact-inner">
+        <div class="contact-hero">
+          <p class="contact-label mono">Connect with me</p>
+          <h2 class="contact-heading">Get in Touch</h2>
+          <p class="contact-subtext">
+            I'd love to hear from you! I am always open to new opportunities. If you have any questions or feedback
+            please use the form below. Feel free to contact me.
+          </p>
+        </div>
+
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Enter your e-mail" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="8" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            Submit now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
