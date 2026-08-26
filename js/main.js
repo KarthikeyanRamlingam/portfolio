@@ -319,3 +319,140 @@ techBadges.forEach((badge) => {
 document.addEventListener('click', () => {
   techBadges.forEach((badge) => badge.classList.remove('tooltip-active'));
 });
+
+/* ==========================================================
+   PROJECTS HORIZONTAL CAROUSEL CONTROLS
+   ========================================================== */
+
+function initProjectsCarousel() {
+  const track = document.getElementById('projectsTrack');
+  const prevBtn = document.getElementById('projPrevBtn');
+  const nextBtn = document.getElementById('projNextBtn');
+  const dots = document.querySelectorAll('.proj-dot');
+  const counterEl = document.getElementById('counterCurrent');
+
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.project-card');
+
+  // Update button states, active dot & counter based on scroll
+  function updateState() {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const currentScroll = track.scrollLeft;
+
+    if (prevBtn) {
+      prevBtn.disabled = currentScroll <= 8;
+    }
+    if (nextBtn) {
+      nextBtn.disabled = currentScroll >= maxScroll - 8;
+    }
+
+    let closestIdx = 0;
+    let minDistance = Infinity;
+
+    cards.forEach((card, idx) => {
+      const cardOffset = card.offsetLeft;
+      const distance = Math.abs(cardOffset - currentScroll);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIdx = idx;
+      }
+    });
+
+    // Update Dots
+    dots.forEach((dot, idx) => {
+      if (idx === closestIdx) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+
+    // Update Counter (01, 02, etc.)
+    if (counterEl) {
+      counterEl.textContent = String(closestIdx + 1).padStart(2, '0');
+    }
+  }
+
+  // Scroll smoothly to target card index
+  function scrollToIndex(idx) {
+    if (!cards[idx]) return;
+    const card = cards[idx];
+    track.scrollTo({
+      left: card.offsetLeft - 6,
+      behavior: 'smooth'
+    });
+  }
+
+  // Prev / Next button clicks
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const cardWidth = cards[0] ? cards[0].offsetWidth + 26 : 380;
+      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const cardWidth = cards[0] ? cards[0].offsetWidth + 26 : 380;
+      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+  }
+
+  // Pagination dot clicks
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.getAttribute('data-index'), 10);
+      scrollToIndex(idx);
+    });
+  });
+
+  // Track scroll event
+  track.addEventListener('scroll', () => {
+    requestAnimationFrame(updateState);
+  }, { passive: true });
+
+  // Mouse Drag to Scroll
+  let isDown = false;
+  let startX;
+  let scrollLeftStart;
+
+  track.addEventListener('mousedown', (e) => {
+    if (e.target.closest('a') || e.target.closest('button')) return;
+    isDown = true;
+    track.classList.add('is-dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollLeftStart = track.scrollLeft;
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+  });
+
+  track.addEventListener('mouseleave', () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    track.scrollLeft = scrollLeftStart - walk;
+  });
+
+  // Initial update
+  updateState();
+  window.addEventListener('resize', updateState);
+}
+
+// Initialize carousel after DOM load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initProjectsCarousel);
+} else {
+  initProjectsCarousel();
+}

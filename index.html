@@ -83,10 +83,15 @@
           </lottie-player>
         </div>
 
-        <h2 class="hero-greeting">Hi ! I'm Karthikeyan</h2>
+        <div class="hero-status-pill">
+          <span class="status-indicator-dot"></span>
+          <span>Available for work</span>
+        </div>
+
+        <h2 class="hero-greeting">Hi ! I'm <span class="hero-name">Karthikeyan</span></h2>
 
         <h1 class="hero-headline">
-          Software Developer,Building Ideas Into Digital Experiences.
+          Software Developer, <span class="gradient-accent-text">Building Ideas Into Digital Experiences.</span>
         </h1>
 
         <p class="hero-tagline">
@@ -96,13 +101,13 @@
 
         <div class="hero-actions">
           <a href="#contact" data-page="contact" class="hero-btn hero-btn-primary">
-            Say Hi!
+            <span>Say Hi!</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
           <a href="assets/resume.pdf" target="_blank" rel="noopener" class="hero-btn hero-btn-secondary">
-            My resume
+            <span>My resume</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
             </svg>
@@ -117,19 +122,19 @@
         <div class="about-layout">
           <div class="about-photo">
             <div class="about-photo-frame">
+              <div class="about-photo-glow"></div>
               <img src="assets/karthik.png" alt="Karthikeyan R">
             </div>
           </div>
 
           <div class="about-content">
-            <h2 class="about-heading">About me</h2>
+            <h2 class="about-heading">About <span class="gradient-accent-text">Me</span></h2>
             <p class="about-text">
               A passionate Software Developer focused on building scalable, user-friendly web applications and exploring
-              AI/ML technologies. Skilled in Java, Spring Boot, React.js, JavaScript, Python, REST APIs, and MySQL, with
-              hands-on experience developing full-stack and AI-powered projects. I enjoy solving problems, learning new
-              technologies, and turning ideas into reliable software solutions.
-              . An avid learner and explorer, I'm always
-              seeking new opportunities to grow.
+              AI/ML technologies. Skilled in Java, Spring Boot, React.js, JavaScript, Python, REST APIs, and
+              PostgreSQL/MySQL, with
+              hands-on experience engineering full-stack platforms and AI-powered systems. I enjoy solving complex
+              problems, writing clean code, and turning ambitious ideas into reliable software solutions.
             </p>
 
             <div class="about-cards">
@@ -142,54 +147,58 @@
                 </div>
                 <h3 class="about-card-title">Education</h3>
                 <p class="about-card-text">B.E in Computer Science</p>
+                <span class="about-card-sub">Engineering & Architecture</span>
               </div>
 
               <div class="about-card">
-                <div class="about-card-icon">
+                <div class="about-card-icon icon-cyan">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M16 18L22 12L16 6" />
                     <path d="M8 6L2 12L8 18" />
                   </svg>
                 </div>
-                <h3 class="about-card-title">Languages</h3>
-                <p class="about-card-text">Java, Python, JavaScript, SQL, NextJS</p>
+                <h3 class="about-card-title">Core Stack</h3>
+                <p class="about-card-text">Java, Spring Boot, React, Next.js</p>
+                <span class="about-card-sub">Python, TypeScript, SQL</span>
               </div>
 
               <div class="about-card">
-                <div class="about-card-icon">
+                <div class="about-card-icon icon-purple">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="2" y="7" width="20" height="14" rx="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                   </svg>
                 </div>
-                <h3 class="about-card-title">Projects</h3>
-                <p class="about-card-text">Built projects on AI-ML and Java</p>
+                <h3 class="about-card-title">Specialization</h3>
+                <p class="about-card-text">Full-Stack & Applied AI/ML</p>
+                <span class="about-card-sub">Distributed Systems & APIs</span>
               </div>
             </div>
 
             <div class="about-tools">
-              <h3 class="about-tools-title">Tools I use</h3>
+              <h3 class="about-tools-title">Tools & Technologies I use</h3>
               <div class="about-tools-grid">
-                <div class="tool-icon">
+                <div class="tool-icon" data-tooltip="VS Code">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
                     alt="VS Code">
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" data-tooltip="Jupyter">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
                     alt="Jupyter">
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" data-tooltip="Docker">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" data-tooltip="Postman">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
                     alt="Postman">
                 </div>
-                <div class="tool-icon">
+                <div class="tool-icon" data-tooltip="Git">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
                 </div>
-                <div class="tool-icon">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                <div class="tool-icon" data-tooltip="GitHub">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
+                    class="dark-invert">
                 </div>
               </div>
             </div>
@@ -200,157 +209,447 @@
 
     <!-- PROJECTS PAGE -->
     <section class="page" id="projects">
-      <div class="page-inner">
-        <div class="page-header">
-          <h1 class="page-header-title">Things I've <span class="accent">Built</span></h1>
-          <p class="page-header-sub">A selection of projects across full-stack and AI/ML</p>
-        </div>
+      <div class="page-inner projects-page-container">
 
-        <div class="projects-grid">
+        <!-- Centered Header Section (Tagline Removed) -->
+        <div class="projects-header-centered">
+          <h1 class="page-header-title text-center">
+            Things I've <span class="gradient-accent-text">Built & Deployed</span>
+          </h1>
+          <p class="page-header-sub text-center">
+            A curated showcase of full-stack web platforms, distributed cloud systems, and AI/ML applications.
+          </p>
 
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="assets/Gemini_Generated_Image_hjbcbehjbcbehjbc.png" alt="BookIt project thumbnail"
-                loading="lazy">
+          <!-- Centered Carousel Controls Toolbar -->
+          <div class="projects-toolbar">
+            <div class="projects-counter-badge" id="projCounter" aria-label="Current project counter">
+              <span class="counter-current" id="counterCurrent">01</span>
+              <span class="counter-divider">/</span>
+              <span class="counter-total">04</span>
             </div>
-            <div class="project-body">
-              <h3 class="project-title">BookIt</h3>
-              <p class="project-kicker mono dim">Full-stack appointment booking platform</p>
-              <ul class="project-bullets">
-                <li>A full-stack appointment platform that enables customers to discover services, book appointments,
-                  make payments, and check in via QR codes. Businesses can manage staff, schedules, queues, services,
-                  notifications, and no-shows through a centralized dashboard.</li>
-              </ul>
-              <div class="tag-list" aria-label="Tech stack">
-                <div class="tech-icon-badge" data-tooltip="Next.js">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
-                    class="dark-invert" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="TypeScript">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                    alt="TypeScript" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Node.js">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"
-                    loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="PostgreSQL">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-                    alt="PostgreSQL" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Stripe">
-                  <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Twilio">
-                  <img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Twilio" loading="lazy">
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/KarthikeyanRamlingam/BookIt" target="_blank" rel="noopener"
-                  class="proj-btn proj-btn-ghost">Code</a>
-                <a href="https://book-it-kappa-virid.vercel.app" target="_blank" rel="noopener"
-                  class="proj-btn proj-btn-solid">Live Demo ↗</a>
-              </div>
-            </div>
-          </article>
 
-          <article class="project-card">
-            <div class="project-thumb">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="9" cy="9" r="2" />
-                <path d="m21 15-5-5L5 21" />
+            <div class="projects-nav-controls" aria-label="Project slider controls">
+              <button class="proj-nav-btn prev-btn" id="projPrevBtn" aria-label="Previous project"
+                title="Previous project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="proj-nav-btn next-btn" id="projNextBtn" aria-label="Next project" title="Next project">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="projects-hint-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
               </svg>
+              <span>Swipe or scroll</span>
             </div>
-            <div class="project-body">
-              <h3 class="project-title">Deepfake Image Detection</h3>
-              <p class="project-kicker mono dim">AI-powered image classification system</p>
-              <ul class="project-bullets">
-                <li>Built a CNN-based classifier combined with FFT frequency analysis to flag manipulated images.</li>
-                <li>Handled preprocessing, training and evaluation, deployed as an interactive Streamlit app.</li>
-              </ul>
-              <div class="tag-list" aria-label="Tech stack">
-                <div class="tech-icon-badge" data-tooltip="Python">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
-                    loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="TensorFlow">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                    alt="TensorFlow" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="CNN / PyTorch">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
-                    alt="CNN / PyTorch" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="FFT / NumPy">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                    alt="FFT / NumPy" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Streamlit">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
-                    alt="Streamlit" loading="lazy">
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener"
-                  class="proj-btn proj-btn-ghost">Code</a>
-                <a href="#" target="_blank" rel="noopener" class="proj-btn proj-btn-solid">Live Demo ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-              <div class="project-thumb">
-              <img src="assets/Gemini_Generated_Image_fzc6bmfzc6bmfzc6.png" alt="Dayflow project thumbnail"
-                loading="lazy">
-            </div>
-            <div class="project-body">
-              <h3 class="project-title">Dayflow HRMS</h3>
-              <p class="project-kicker mono dim">Modern Human Resource Management System</p>
-              <ul class="project-bullets">
-                <li>A full-stack web application designed to centralize HR operations for modern organizations. Features
-                  automated attendance check-in/out, multi-level leave approvals, employee profile management, and
-                  salary/payslip calculations with real-time analytics.</li>
-              </ul>
-              <div class="tag-list" aria-label="Tech stack">
-                <div class="tech-icon-badge" data-tooltip="React 19">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
-                    loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="TypeScript">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                    alt="TypeScript" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Tailwind CSS">
-                  <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Java 17">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
-                    loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Spring Boot 3.3">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-                    alt="Spring Boot" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="PostgreSQL">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-                    alt="PostgreSQL" loading="lazy">
-                </div>
-                <div class="tech-icon-badge" data-tooltip="Docker">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"
-                    loading="lazy">
-                </div>
-              </div>
-              <div class="project-actions">
-                <a href="https://github.com/KarthikeyanRamlingam/Dayflow_odoo" target="_blank" rel="noopener"
-                  class="proj-btn proj-btn-ghost">Code</a>
-                <a href="https://dayflow-odoo-flax.vercel.app" target="_blank" rel="noopener"
-                  class="proj-btn proj-btn-solid">Live Demo ↗</a>
-              </div>
-            </div>
-          </article>
-
+          </div>
         </div>
+
+        <!-- Carousel Track with Ambient Glow -->
+        <div class="projects-carousel-wrapper">
+          <div class="projects-track" id="projectsTrack">
+
+            <!-- Card 1: BookIt -->
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="assets/Gemini_Generated_Image_hjbcbehjbcbehjbc.png" alt="BookIt platform thumbnail"
+                  loading="lazy">
+                <div class="thumb-overlay-gradient"></div>
+                <div class="thumb-badges-row">
+                  <span class="thumb-pill-tag tag-primary">⚡ Full-Stack SaaS</span>
+                  <span class="thumb-status-pill status-live">
+                    <span class="status-indicator-dot"></span> Live App
+                  </span>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-title-row">
+                  <h3 class="project-title">BookIt</h3>
+                  <a href="https://book-it-kappa-virid.vercel.app" target="_blank" rel="noopener"
+                    class="title-direct-link" title="Visit BookIt" aria-label="Visit BookIt">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="project-kicker mono dim">Appointment booking & schedule manager</p>
+
+                <div class="project-chips-row">
+                  <span class="proj-highlight-chip">Appointments</span>
+                  <span class="proj-highlight-chip">QR Check-in</span>
+                  <span class="proj-highlight-chip">Stripe</span>
+                </div>
+
+                <ul class="project-bullets">
+                  <li>Full-stack appointment platform enabling customers to discover services, book slots, make
+                    payments, and check in via QR codes.</li>
+                  <li>Centralized business portal to manage staff schedules, queues, automated SMS notifications, and
+                    no-show analytics.</li>
+                </ul>
+
+                <div class="tag-list" aria-label="Tech stack">
+                  <div class="tech-icon-badge" data-tooltip="Next.js">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                      alt="Next.js" class="dark-invert" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="TypeScript">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                      alt="TypeScript" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Node.js">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                      alt="Node.js" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="PostgreSQL">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                      alt="PostgreSQL" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Stripe">
+                    <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Twilio">
+                    <img src="https://cdn.simpleicons.org/twilio/F22F46" alt="Twilio" loading="lazy">
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/KarthikeyanRamlingam/BookIt" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                      <path
+                        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://book-it-kappa-virid.vercel.app" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-solid">
+                    <span>Live Demo</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-right">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Deepfake Image Detection -->
+            <article class="project-card">
+              <div class="project-thumb project-thumb-ai">
+                <div class="ai-scan-graphic">
+                  <div class="ai-grid-mesh"></div>
+                  <div class="ai-scanner-wave"></div>
+                  <svg viewBox="0 0 120 80" fill="none" class="ai-face-svg">
+                    <circle cx="60" cy="40" r="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2"
+                      opacity="0.6" />
+                    <circle cx="60" cy="40" r="22" stroke="currentColor" stroke-width="1.5" opacity="0.8" />
+                    <line x1="60" y1="12" x2="60" y2="68" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"
+                      opacity="0.4" />
+                    <line x1="32" y1="40" x2="88" y2="40" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"
+                      opacity="0.4" />
+                    <circle cx="50" cy="35" r="3" fill="currentColor" />
+                    <circle cx="70" cy="35" r="3" fill="currentColor" />
+                    <path d="M52 50 Q60 56 68 50" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      fill="none" />
+                    <rect x="26" y="10" width="8" height="8" stroke="currentColor" stroke-width="1.5" fill="none" />
+                    <rect x="86" y="10" width="8" height="8" stroke="currentColor" stroke-width="1.5" fill="none" />
+                    <rect x="26" y="62" width="8" height="8" stroke="currentColor" stroke-width="1.5" fill="none" />
+                    <rect x="86" y="62" width="8" height="8" stroke="currentColor" stroke-width="1.5" fill="none" />
+                  </svg>
+                </div>
+                <div class="thumb-overlay-gradient"></div>
+                <div class="thumb-badges-row">
+                  <span class="thumb-pill-tag tag-purple">🧠 Computer Vision</span>
+                  <span class="thumb-status-pill status-open">
+                    <span class="status-indicator-dot dot-purple"></span> AI Model
+                  </span>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-title-row">
+                  <h3 class="project-title">Deepfake Image Detection</h3>
+                  <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener"
+                    class="title-direct-link" title="Visit Repo" aria-label="Visit Deepfake Detection Repo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="project-kicker mono dim">CNN & Frequency Spectral Classifier</p>
+
+                <div class="project-chips-row">
+                  <span class="proj-highlight-chip">FFT Spectral</span>
+                  <span class="proj-highlight-chip">TensorFlow</span>
+                  <span class="proj-highlight-chip">Streamlit</span>
+                </div>
+
+                <ul class="project-bullets">
+                  <li>Built a CNN-based deep learning classifier combined with FFT frequency analysis to flag
+                    manipulated synthetic images.</li>
+                  <li>Trained model on custom benchmarks, optimized inference latency, and deployed with interactive
+                    Streamlit visualization.</li>
+                </ul>
+
+                <div class="tag-list" aria-label="Tech stack">
+                  <div class="tech-icon-badge" data-tooltip="Python">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                      alt="Python" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="TensorFlow">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                      alt="TensorFlow" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="PyTorch">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+                      alt="PyTorch" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="NumPy">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"
+                      loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Streamlit">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
+                      alt="Streamlit" loading="lazy">
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                      <path
+                        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://github.com/KarthikeyanRamlingam" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-solid">
+                    <span>Explore App</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-right">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Dayflow HRMS -->
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="assets/Gemini_Generated_Image_fzc6bmfzc6bmfzc6.png" alt="Dayflow HRMS thumbnail"
+                  loading="lazy">
+                <div class="thumb-overlay-gradient"></div>
+                <div class="thumb-badges-row">
+                  <span class="thumb-pill-tag tag-emerald">💼 Enterprise HRMS</span>
+                  <span class="thumb-status-pill status-live">
+                    <span class="status-indicator-dot"></span> Live Production
+                  </span>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-title-row">
+                  <h3 class="project-title">Dayflow HRMS</h3>
+                  <a href="https://dayflow-odoo-flax.vercel.app" target="_blank" rel="noopener"
+                    class="title-direct-link" title="Visit Dayflow" aria-label="Visit Dayflow HRMS">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="project-kicker mono dim">Human Resource & Payroll Management</p>
+
+                <div class="project-chips-row">
+                  <span class="proj-highlight-chip">Spring Boot 3</span>
+                  <span class="proj-highlight-chip">React 19</span>
+                  <span class="proj-highlight-chip">Docker</span>
+                </div>
+
+                <ul class="project-bullets">
+                  <li>Full-stack enterprise app centralizing attendance tracking, multi-level leave approvals, and
+                    employee profile data.</li>
+                  <li>Real-time salary calculation, automated payslip generation, and executive HR analytics dashboard.
+                  </li>
+                </ul>
+
+                <div class="tag-list" aria-label="Tech stack">
+                  <div class="tech-icon-badge" data-tooltip="React 19">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
+                      loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="TypeScript">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                      alt="TypeScript" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Tailwind CSS">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Java 17">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                      loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Spring Boot 3.3">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                      alt="Spring Boot" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="PostgreSQL">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                      alt="PostgreSQL" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Docker">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                      alt="Docker" loading="lazy">
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/KarthikeyanRamlingam/Dayflow_odoo" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                      <path
+                        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://dayflow-odoo-flax.vercel.app" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-solid">
+                    <span>Live Demo</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-right">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: PixPopCanvas -->
+            <article class="project-card">
+              <div class="project-thumb project-thumb-ai">
+                <img src="assets/pixpop.png" alt="Dayflow HRMS thumbnail"
+                  loading="lazy">
+                <div class="ai-scan-graphic">
+                  <div class="ai-grid-mesh"></div>
+                  <div class="ai-scanner-wave"></div>
+                  <svg viewBox="0 0 120 80" fill="none" class="thumb-flow-svg">
+                    <defs>
+                      <linearGradient id="pixCanvasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8B5CF6" />
+                        <stop offset="50%" stop-color="#EC4899" />
+                        <stop offset="100%" stop-color="#3B82F6" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="22" y="14" width="76" height="52" rx="6" stroke="url(#pixCanvasGrad)" stroke-width="1.8"
+                      fill="#0F172A" fill-opacity="0.6" />
+                    <path d="M26 56 L42 38 L54 50 L68 32 L84 52 L94 48 L94 62 L26 62 Z" fill="url(#pixCanvasGrad)"
+                      opacity="0.25" />
+                    <path d="M26 56 L42 38 L54 50 L68 32 L84 52 L94 48" stroke="url(#pixCanvasGrad)" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="74" cy="26" r="5" fill="#F472B6" opacity="0.8" />
+                    <path d="M35 25 L37 20 L39 25 L44 27 L39 29 L37 34 L35 29 L30 27 Z" fill="#FDE047" opacity="0.9" />
+                    <path d="M86 22 L87 19 L88 22 L91 23 L88 24 L87 27 L86 24 L83 23 Z" fill="#A78BFA" opacity="0.9" />
+                    <line x1="58" y1="14" x2="58" y2="66" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="2 2"
+                      opacity="0.8" />
+                    <circle cx="58" cy="40" r="3.5" fill="#FFFFFF" />
+                  </svg>
+                </div>
+                <div class="thumb-overlay-gradient"></div>
+                <div class="thumb-badges-row">
+                  <span class="thumb-pill-tag tag-purple">✨ AI Studio</span>
+                  <span class="thumb-status-pill status-open">
+                    <span class="status-indicator-dot dot-purple"></span> GenAI & Edit
+                  </span>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-title-row">
+                  <h3 class="project-title">PixPopCanvas</h3>
+                  <a href="https://github.com/KarthikeyanRamlingam/AI-Image-Studio" target="_blank" rel="noopener"
+                    class="title-direct-link" title="Visit PixPopCanvas Repo" aria-label="Visit PixPopCanvas Repo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="project-kicker mono dim">AI Image Generation & Natural-Language Studio</p>
+
+                <div class="project-chips-row">
+                  <span class="proj-highlight-chip">Imagen 3 & FLUX.1</span>
+                  <span class="proj-highlight-chip">Prompt Enhancement</span>
+                  <span class="proj-highlight-chip">FastAPI & React 19</span>
+                </div>
+
+                <ul class="project-bullets">
+                  <li>Full-stack AI image generation and natural-language photo editing web studio featuring prompt
+                    enhancement and before/after comparison sliders.</li>
+                  <li>Integrated image history galleries, user credit tracking system, and multi-provider AI inference
+                    with Google Gemini and FLUX.1.</li>
+                </ul>
+
+                <div class="tag-list" aria-label="Tech stack">
+                  <div class="tech-icon-badge" data-tooltip="React 19">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                      alt="React 19" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Vite">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite"
+                      loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="FastAPI">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+                      alt="FastAPI" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Python 3.10+">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                      alt="Python" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Google Gemini & Imagen 3">
+                    <img src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Google Gemini" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="FLUX.1 (Hugging Face / Replicate)">
+                    <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="FLUX.1" loading="lazy">
+                  </div>
+                  <div class="tech-icon-badge" data-tooltip="Pydantic v2">
+                    <img src="https://cdn.simpleicons.org/pydantic/E92063" alt="Pydantic" loading="lazy">
+                  </div>
+                </div>
+
+                <div class="project-actions">
+                  <a href="https://github.com/KarthikeyanRamlingam/AI-Image-Studio" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-ghost">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                      <path
+                        d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span>Code</span>
+                  </a>
+                  <a href="https://ai-image-studio-flame.vercel.app" target="_blank" rel="noopener"
+                    class="proj-btn proj-btn-solid">
+                    <span>Live Demo</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon-right">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Centered Pagination Indicators -->
+        <div class="projects-pagination" id="projectsPagination" aria-label="Project slider pagination">
+          <button class="proj-dot active" data-index="0" aria-label="Go to project 1"></button>
+          <button class="proj-dot" data-index="1" aria-label="Go to project 2"></button>
+          <button class="proj-dot" data-index="2" aria-label="Go to project 3"></button>
+          <button class="proj-dot" data-index="3" aria-label="Go to project 4"></button>
+        </div>
+
       </div>
     </section>
 
@@ -359,14 +658,14 @@
       <div class="page-inner contact-inner">
         <div class="contact-hero">
           <p class="contact-label mono">Connect with me</p>
-          <h2 class="contact-heading">Get in Touch</h2>
+          <h2 class="contact-heading">Get in <span class="gradient-accent-text">Touch</span></h2>
           <p class="contact-subtext">
-            I'd love to hear from you! I am always open to new opportunities. If you have any questions or feedback
-            please use the form below. Feel free to contact me.
+            I'd love to hear from you! I am always open to new opportunities, collaborations, and discussions. Feel free
+            to reach out directly.
           </p>
         </div>
 
-        <form class="contact-form" action="#" method="POST">
+        <form class="contact-form glass-card-form" action="#" method="POST">
           <div class="form-row">
             <div class="form-group">
               <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -376,10 +675,10 @@
             </div>
           </div>
           <div class="form-group">
-            <textarea id="message" name="message" rows="8" placeholder="Enter your message" required></textarea>
+            <textarea id="message" name="message" rows="7" placeholder="Enter your message" required></textarea>
           </div>
-          <button type="submit" class="submit-btn">
-            Submit now
+          <button type="submit" class="submit-btn hero-btn-primary">
+            <span>Send Message</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
