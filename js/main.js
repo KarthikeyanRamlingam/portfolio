@@ -378,8 +378,10 @@ function initProjectsCarousel() {
   function scrollToIndex(idx) {
     if (!cards[idx]) return;
     const card = cards[idx];
-    track.scrollTo({
-      left: card.offsetLeft - 6,
+    const trackRect = track.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+    track.scrollBy({
+      left: cardRect.left - trackRect.left - 4,
       behavior: 'smooth'
     });
   }
@@ -387,14 +389,14 @@ function initProjectsCarousel() {
   // Prev / Next button clicks
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
-      const cardWidth = cards[0] ? cards[0].offsetWidth + 26 : 380;
+      const cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340;
       track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     });
   }
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
-      const cardWidth = cards[0] ? cards[0].offsetWidth + 26 : 380;
+      const cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340;
       track.scrollBy({ left: cardWidth, behavior: 'smooth' });
     });
   }
