@@ -5,8 +5,23 @@
 
 const pages = document.querySelectorAll('.page');
 const navLinks = document.querySelectorAll('[data-page]');
+const primaryNavLinks = document.querySelectorAll('.site-nav-links [data-page]');
 const main = document.querySelector('main');
+const reducedMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+function preferredScrollBehavior() {
+  return reducedMotionMedia.matches ? 'auto' : 'smooth';
+}
+// End of portfolio interactions.
+function setActiveNav(id) {
+  primaryNavLinks.forEach((link) => {
+    if (link.getAttribute('data-page') === id) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
 // Page order for navigation
 const pageOrder = ['home', 'about', 'projects', 'contact'];
 
@@ -16,11 +31,12 @@ function scrollToPage(id) {
   if (!targetPage) return;
 
   targetPage.scrollIntoView({
-    behavior: 'smooth',
+    behavior: preferredScrollBehavior(),
     block: 'start'
   });
 
   history.pushState(null, '', `#${id}`);
+  setActiveNav(id);
 }
 
 // Navigation link clicks
@@ -40,14 +56,16 @@ window.addEventListener('popstate', () => {
   const targetPage = document.getElementById(id);
   if (targetPage) {
     targetPage.scrollIntoView({
-      behavior: 'smooth',
+      behavior: preferredScrollBehavior(),
       block: 'start'
     });
+    setActiveNav(id);
   }
 });
 
 // Load initial page from hash
 const initialId = window.location.hash.replace('#', '') || 'home';
+setActiveNav(initialId);
 if (initialId && document.getElementById(initialId)) {
   // Delay to ensure page is loaded
   setTimeout(() => {
@@ -76,6 +94,7 @@ main.addEventListener('scroll', () => {
       if (scrollPosition >= pageTop - windowHeight / 3 &&
           scrollPosition < pageBottom - windowHeight / 3) {
         history.replaceState(null, '', `#${page.id}`);
+        setActiveNav(page.id);
       }
     });
   }, 100);
@@ -120,13 +139,11 @@ main.addEventListener('scroll', () => {
 // Collect all animatable elements after DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   // Home page elements
-  const heroPhoto = document.querySelector('.hero-photo');
   const heroGreeting = document.querySelector('.hero-greeting');
   const heroHeadline = document.querySelector('.hero-headline');
   const heroTagline = document.querySelector('.hero-tagline');
   const heroActions = document.querySelector('.hero-actions');
 
-  if (heroPhoto) heroPhoto.classList.add('scroll-reveal');
   if (heroGreeting) heroGreeting.classList.add('scroll-reveal');
   if (heroHeadline) heroHeadline.classList.add('scroll-reveal');
   if (heroTagline) heroTagline.classList.add('scroll-reveal');
@@ -167,20 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
   handleReveal();
 });
 
-// Parallax effect on hero photo
-const heroPhoto = document.querySelector('.hero-photo');
-if (heroPhoto) {
-  main.addEventListener('scroll', () => {
-    const scrolled = main.scrollTop;
-    const rate = scrolled * 0.3;
-    heroPhoto.style.transform = `translateY(${rate}px) scale(${1 - scrolled * 0.0003})`;
-  });
-}
-
 // Parallax effect on about photo
 const aboutPhotoFrame = document.querySelector('.about-photo-frame');
 if (aboutPhotoFrame) {
   main.addEventListener('scroll', () => {
+    if (reducedMotionMedia.matches) {
+      aboutPhotoFrame.style.transform = '';
+      return;
+    }
     const aboutPage = document.getElementById('about');
     if (!aboutPage) return;
 
@@ -207,6 +218,16 @@ function initTheme() {
   if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
+
+  updateThemeToggle();
+}
+
+function updateThemeToggle() {
+  const toggle = document.getElementById('themeToggle');
+  if (!toggle) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  toggle.setAttribute('aria-pressed', String(isDark));
+  toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
 }
 
 // Toggle dark mode
@@ -216,6 +237,7 @@ function toggleTheme() {
 
   document.documentElement.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
+  updateThemeToggle();
 }
 
 // Initialize on page load
@@ -235,17 +257,23 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   // Initialize EmailJS with your public key
   // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-  emailjs.init('j0kc172rjC0NqACzp');
+  if (window.emailjs) {
+    emailjs.init('j0kc172rjC0NqACzp');
+  }
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = contactForm.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
+    const submitLabel = submitBtn.querySelector('span');
+    const formStatus = document.getElementById('formStatus');
+    const originalText = submitLabel.textContent;
 
     // Show loading state
-    submitBtn.innerHTML = 'Sending...';
+    submitLabel.textContent = 'Sending…';
     submitBtn.disabled = true;
+    contactForm.setAttribute('aria-busy', 'true');
+    formStatus.textContent = 'Sending your message…';
 
     // Get form data
     const formData = new FormData(contactForm);
@@ -253,10 +281,14 @@ if (contactForm) {
       from_name: formData.get('name'),
       from_email: formData.get('email'),
       message: formData.get('message'),
-      to_email: 'karthikeyanramlingam@gmail.com' // Replace with your email
+      to_email: 'karthikeyanmrk2004@gmail.com'
     };
 
     try {
+      if (!window.emailjs) {
+        throw new Error('Email service unavailable');
+      }
+
       // Send email using EmailJS
       // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual values
       const response = await emailjs.send(
@@ -267,8 +299,9 @@ if (contactForm) {
 
       if (response.status === 200) {
         // Show success message
-        submitBtn.innerHTML = '✓ Message Sent!';
+        submitLabel.textContent = 'Message sent!';
         submitBtn.style.background = 'var(--online)';
+        formStatus.textContent = 'Your message was sent successfully.';
 
         // Reset form
         contactForm.reset();
@@ -278,183 +311,27 @@ if (contactForm) {
 
       // Reset button after 3 seconds
       setTimeout(() => {
-        submitBtn.innerHTML = originalText;
+        submitLabel.textContent = originalText;
         submitBtn.style.background = '';
         submitBtn.disabled = false;
+        contactForm.removeAttribute('aria-busy');
       }, 3000);
 
     } catch (error) {
       console.error('EmailJS Error:', error);
       // Show error message
-      submitBtn.innerHTML = '✗ Error. Try again';
+      submitLabel.textContent = 'Try again';
       submitBtn.style.background = '#DC2626';
+      formStatus.textContent = 'Your message could not be sent. Please try again or email me directly.';
 
       // Reset button after 3 seconds
       setTimeout(() => {
-        submitBtn.innerHTML = originalText;
+        submitLabel.textContent = originalText;
         submitBtn.style.background = '';
         submitBtn.disabled = false;
+        contactForm.removeAttribute('aria-busy');
       }, 3000);
     }
   });
 }
 
-/* ==========================================================
-   MOBILE TOOLTIP INTERACTION
-   ========================================================== */
-
-const techBadges = document.querySelectorAll('.tech-icon-badge');
-techBadges.forEach((badge) => {
-  badge.setAttribute('tabindex', '0');
-  badge.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isActive = badge.classList.contains('tooltip-active');
-    techBadges.forEach((b) => b.classList.remove('tooltip-active'));
-    if (!isActive) {
-      badge.classList.add('tooltip-active');
-    }
-  });
-});
-
-document.addEventListener('click', () => {
-  techBadges.forEach((badge) => badge.classList.remove('tooltip-active'));
-});
-
-/* ==========================================================
-   PROJECTS HORIZONTAL CAROUSEL CONTROLS
-   ========================================================== */
-
-function initProjectsCarousel() {
-  const track = document.getElementById('projectsTrack');
-  const prevBtn = document.getElementById('projPrevBtn');
-  const nextBtn = document.getElementById('projNextBtn');
-  const dots = document.querySelectorAll('.proj-dot');
-  const counterEl = document.getElementById('counterCurrent');
-
-  if (!track) return;
-
-  const cards = track.querySelectorAll('.project-card');
-
-  // Update button states, active dot & counter based on scroll
-  function updateState() {
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    const currentScroll = track.scrollLeft;
-
-    if (prevBtn) {
-      prevBtn.disabled = currentScroll <= 8;
-    }
-    if (nextBtn) {
-      nextBtn.disabled = currentScroll >= maxScroll - 8;
-    }
-
-    let closestIdx = 0;
-    let minDistance = Infinity;
-
-    cards.forEach((card, idx) => {
-      const cardOffset = card.offsetLeft;
-      const distance = Math.abs(cardOffset - currentScroll);
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestIdx = idx;
-      }
-    });
-
-    // Update Dots
-    dots.forEach((dot, idx) => {
-      if (idx === closestIdx) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-
-    // Update Counter (01, 02, etc.)
-    if (counterEl) {
-      counterEl.textContent = String(closestIdx + 1).padStart(2, '0');
-    }
-  }
-
-  // Scroll smoothly to target card index
-  function scrollToIndex(idx) {
-    if (!cards[idx]) return;
-    const card = cards[idx];
-    const trackRect = track.getBoundingClientRect();
-    const cardRect = card.getBoundingClientRect();
-    track.scrollBy({
-      left: cardRect.left - trackRect.left - 4,
-      behavior: 'smooth'
-    });
-  }
-
-  // Prev / Next button clicks
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      const cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340;
-      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      const cardWidth = cards[0] ? cards[0].offsetWidth + 20 : 340;
-      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
-    });
-  }
-
-  // Pagination dot clicks
-  dots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.getAttribute('data-index'), 10);
-      scrollToIndex(idx);
-    });
-  });
-
-  // Track scroll event
-  track.addEventListener('scroll', () => {
-    requestAnimationFrame(updateState);
-  }, { passive: true });
-
-  // Mouse Drag to Scroll
-  let isDown = false;
-  let startX;
-  let scrollLeftStart;
-
-  track.addEventListener('mousedown', (e) => {
-    if (e.target.closest('a') || e.target.closest('button')) return;
-    isDown = true;
-    track.classList.add('is-dragging');
-    startX = e.pageX - track.offsetLeft;
-    scrollLeftStart = track.scrollLeft;
-  });
-
-  window.addEventListener('mouseup', () => {
-    if (!isDown) return;
-    isDown = false;
-    track.classList.remove('is-dragging');
-  });
-
-  track.addEventListener('mouseleave', () => {
-    if (!isDown) return;
-    isDown = false;
-    track.classList.remove('is-dragging');
-  });
-
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    track.scrollLeft = scrollLeftStart - walk;
-  });
-
-  // Initial update
-  updateState();
-  window.addEventListener('resize', updateState);
-}
-
-// Initialize carousel after DOM load
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initProjectsCarousel);
-} else {
-  initProjectsCarousel();
-}
